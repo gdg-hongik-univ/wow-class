@@ -4,11 +4,11 @@ import "@wow-class/ui/styles.css";
 import "react-toastify/dist/ReactToastify.css";
 
 import { JotaiProvider } from "components/JotaiProvider";
+import { MSWProvider } from "components/MSWProvider";
 import Navbar from "components/Navbar";
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { ToastContainer } from "react-toastify";
-
 export const metadata: Metadata = {
   title: {
     default: "와우클래스: 멘토 | GDGoC Hongik 스터디 서비스",
@@ -50,17 +50,19 @@ const RootLayout = ({
   return (
     <html lang="ko">
       <body>
-        <JotaiProvider>
-          <ToastContainer
-            hideProgressBar
-            autoClose={4000}
-            closeButton={false}
-            limit={1}
-          />
-          <Navbar />
-          {children}
-          {modal}
-        </JotaiProvider>
+        <MSWProvider>
+          <JotaiProvider>
+            <ToastContainer
+              hideProgressBar
+              autoClose={4000}
+              closeButton={false}
+              limit={1}
+            />
+            <Navbar />
+            {children}
+            {modal}
+          </JotaiProvider>
+        </MSWProvider>
       </body>
     </html>
   );
