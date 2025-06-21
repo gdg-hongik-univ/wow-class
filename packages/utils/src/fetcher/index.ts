@@ -182,10 +182,14 @@ class Fetcher {
 
 const fetcher = new Fetcher({
   baseUrl:
-    process.env.NEXT_PUBLIC_VERCEL_ENV === "production"
-      ? process.env.NEXT_PUBLIC_PROD_BASE_URL
-      : process.env.NEXT_PUBLIC_DEV_BASE_URL,
-  defaultHeaders: { "Content-Type": "application/json" },
+    process.env.NEXT_PUBLIC_API_MOCKING === "true"
+      ? process.env.NEXT_PUBLIC_MOCK_SERVER_URL
+      : process.env.NEXT_PUBLIC_VERCEL_ENV === "production"
+        ? process.env.NEXT_PUBLIC_PROD_BASE_URL
+        : process.env.NEXT_PUBLIC_DEV_BASE_URL,
+  defaultHeaders: {
+    "Content-Type": "application/json",
+  },
 });
 
 if (!isClient) {
