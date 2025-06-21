@@ -59,6 +59,7 @@ export const AssignmentBoxInfo = ({
             <Image alt="dot" height={6} src="/images/dot.svg" width={6} />
             <styled.div
               color={isAssignmentSubmissionFailure ? "red.500" : "primary"}
+              whiteSpace="nowrap"
             >
               {isAssignmentSubmissionFailure
                 ? failMapping[submissionFailureType]
