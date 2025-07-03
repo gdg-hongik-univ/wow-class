@@ -54,12 +54,13 @@ const NavItem = ({ href, imageUrl, alt, name, items }: NavItemProps) => {
       ? "active"
       : "inactive";
 
+  const hasSubNavItems = items && items.length > 1;
   return (
     <styled.div listStyle="none" role="presentation">
       <Link
-        {...(items && { "aria-controls": `${name}-submenu` })}
+        {...(hasSubNavItems && { "aria-controls": `${name}-submenu` })}
         aria-expanded={expanded ? "true" : "false"}
-        {...(items?.length && items?.length > 1 && { "aria-haspopup": "true" })}
+        {...(hasSubNavItems && { "aria-haspopup": "true" })}
         href={href}
         {...(navItemType === "active" && {
           onClick: (e) => e.preventDefault(),
@@ -81,7 +82,7 @@ const NavItem = ({ href, imageUrl, alt, name, items }: NavItemProps) => {
         <Text as="div" typo="body1">
           {name}
         </Text>
-        {items?.length && items?.length > 1 && (
+        {hasSubNavItems && (
           <Image
             alt="toggle-icon"
             className={toggleIconStyle}
