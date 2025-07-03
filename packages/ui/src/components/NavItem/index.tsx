@@ -54,7 +54,7 @@ const NavItem = ({ href, imageUrl, alt, name, items }: NavItemProps) => {
       ? "active"
       : "inactive";
 
-  const hasSubNavItems = items && items.length > 1;
+  const hasSubNavItems = items !== undefined && items.length > 1;
   return (
     <styled.div listStyle="none" role="presentation">
       <Link
