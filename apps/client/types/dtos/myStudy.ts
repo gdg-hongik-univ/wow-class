@@ -95,5 +95,3 @@ export interface DailyTaskDto<T extends DailyTaskType> {
     ? Extract<AssignmentSubmissionStatusType, "FAILURE" | "SUCCESS">
     : never;
 }
-
-export type DailyTaskListDtoType<T extends DailyTaskType> = DailyTaskDto<T>[];

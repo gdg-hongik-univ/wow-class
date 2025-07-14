@@ -6,14 +6,13 @@ export const enum apiPath {
   basicStudyInfo = "/v2/common/studies",
   studyDetailAnnouncementList = "/v2/study-announcements",
   allStudyAnnouncementList = "/v2/study-announcements/me",
-  studyDetails = "/studies/study-details",
+
   myOngoingStudy = "/v2/studies/me/ongoing",
-  myOngoingStudyV2 = "/v2/studies/me/ongoing",
+
   studyHistory = "/v2/study-histories",
   studyDetail = "/v2/studies",
   attendance = "/v2/attendances/attend",
-  studyCurriculum = "/study-details/curriculums",
-  dailyTask = "/study-details/todo",
+
   logout = "/auth/logout",
   members = "/common/members",
   assignmentHistory = "/v2/assignment-histories",
