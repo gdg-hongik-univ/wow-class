@@ -1,10 +1,11 @@
 import { fetcher } from "@wow-class/utils";
+import { mentorApiPath } from "constants/apiPath";
 import type { StudyCompleteRequestDto } from "types/dtos/studyComplete";
 
 const studyCompleteApi = {
   postStudyComplete: async (data: StudyCompleteRequestDto) => {
     const response = await fetcher.post(
-      `/v2/mentor/study-histories/complete`,
+      `${mentorApiPath.studyHistory}/complete`,
       data
     );
     return { success: response.ok };
@@ -12,7 +13,7 @@ const studyCompleteApi = {
 
   postStudyCompleteWithdraw: async (data: StudyCompleteRequestDto) => {
     const response = await fetcher.post(
-      `/v2/mentor/study-histories/withdraw-completion`,
+      `${mentorApiPath.studyHistory}/withdraw-completion`,
       data
     );
     return { success: response.ok };

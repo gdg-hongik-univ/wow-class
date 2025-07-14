@@ -1,4 +1,5 @@
 import { fetcher } from "@wow-class/utils";
+import { mentorApiPath } from "constants/apiPath";
 import type { OutstandingStudentApiRequestDto } from "types/dtos/outstandingStudent";
 
 const studyAchievementApi = {
@@ -7,7 +8,7 @@ const studyAchievementApi = {
     data: OutstandingStudentApiRequestDto
   ) => {
     const response = await fetcher.post(
-      `/v2/mentor/study-achievements?studyId=${studyId}`,
+      `${mentorApiPath.studyAchievement}?studyId=${studyId}`,
       data
     );
     return { success: response.ok };
@@ -18,7 +19,7 @@ const studyAchievementApi = {
     data: OutstandingStudentApiRequestDto
   ) => {
     const response = await fetcher.delete(
-      `/v2/mentor/study-achievements?studyId=${studyId}`,
+      `${mentorApiPath.studyAchievement}?studyId=${studyId}`,
       data
     );
     return { success: response.ok };

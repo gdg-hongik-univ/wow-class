@@ -1,5 +1,5 @@
 import { fetcher } from "@wow-class/utils";
-import { apiPath } from "constants/apiPath";
+import { apiPath, mentorApiPath } from "constants/apiPath";
 import { tags } from "constants/tags";
 import type { CreateStudyApiRequestDto } from "types/dtos/createStudy";
 import type { SearchStudyMentorResponseDto } from "types/dtos/searchStudyMentor";
@@ -16,7 +16,7 @@ export const createStudyApi = {
     studyId: number
   ) => {
     const response = await fetcher.put(
-      `${apiPath.createStudyDetailInfo}/${studyId}`,
+      `${mentorApiPath.mentorStudy}/${studyId}`,
       data
     );
     return { success: response.ok };
