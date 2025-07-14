@@ -9,7 +9,7 @@ export const dashboardApi = {
       apiPath.dashboard,
       {
         next: { tags: [tags.dashboard] },
-        cache: "no-store",
+        cache: "force-cache",
       }
     );
 
