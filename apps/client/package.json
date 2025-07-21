@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "mock": "npx tsx watch ./public/mocks/http.ts",
     "dev": "next dev --turbo",
     "build": "next build",
     "start": "next start",
@@ -21,6 +22,9 @@
     "wowds-ui": "^0.2.0"
   },
   "devDependencies": {
+    "@mswjs/http-middleware": "^0.10.3",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
@@ -28,8 +32,11 @@
     "@wow-class/fonts": "workspace:*",
     "@wow-class/typescript-config": "workspace:*",
     "@wow-class/utils": "workspace:*",
+    "cors": "^2.8.5",
     "eslint": "^8",
     "eslint-config-next": "^14.2.5",
+    "express": "^5.1.0",
+    "msw": "^2.4.3",
     "typescript": "^5"
   }
 }
