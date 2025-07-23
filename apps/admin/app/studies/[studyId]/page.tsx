@@ -1,6 +1,7 @@
 import { css } from "@styled-system/css";
 import { Flex } from "@styled-system/jsx";
 import { studyApi } from "apis/study/studyApi";
+import { metaData } from "constants/metaData";
 import { routerPath } from "constants/router/routerPath";
 import Link from "next/link";
 import isAdmin from "utils/isAdmin";
@@ -22,6 +23,13 @@ export const generateMetadata = async ({
   const study = await studyApi.getStudyBasicInfo(+studyId);
   return {
     title: study ? study.title : "스터디",
+    openGraph: {
+      ...metaData.openGraph,
+      ...(study && {
+        title: study.title,
+        description: study.description,
+      }),
+    },
   };
 };
 
