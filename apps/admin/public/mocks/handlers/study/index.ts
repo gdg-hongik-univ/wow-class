@@ -5,10 +5,11 @@ import type { StudyBasicInfoApiResponseDto } from "types/dtos/studyBasicInfo";
 import type { StudyListApiResponseDto } from "types/dtos/studyList";
 import type { StudyStatisticsApiResponseDto } from "types/dtos/studyStatistics";
 import type { PaginatedStudyStudentResponseDto } from "types/dtos/studyStudent";
+import type { StudyAnnouncementType } from "types/entities/study";
 
 import { mockStudent, mockStudyData } from "./mockData";
 
-export const getStudyList = http.get("/v2/admin/studies", () => {
+export const getStudyList = http.get(apiPath.studyList, () => {
   const mockResponse: StudyListApiResponseDto[] = [
     {
       study: mockStudyData,
@@ -38,14 +39,17 @@ export const getStudyList = http.get("/v2/admin/studies", () => {
   return HttpResponse.json(mockResponse);
 });
 
-export const getStudyBasicInfo = http.get(`${apiPath.commonStudy}/0`, () => {
-  const mockResponse: StudyBasicInfoApiResponseDto = {
-    ...mockStudyData,
-    openingDate: "2025-08-12",
-  };
+export const getStudyBasicInfo = http.get(
+  `${apiPath.commonStudy}/:studyId`,
+  () => {
+    const mockResponse: StudyBasicInfoApiResponseDto = {
+      ...mockStudyData,
+      openingDate: "2025-08-12",
+    };
 
-  return HttpResponse.json(mockResponse);
-});
+    return HttpResponse.json(mockResponse);
+  }
+);
 
 export const getStudyAnnouncement = http.get(
   `${apiPath.studyAnnouncement}/:studyId/me`,
@@ -133,5 +137,47 @@ export const getStudyStudentsExcel = http.get(
     ];
 
     return HttpResponse.json(mockData);
+  }
+);
+
+export const deleteStudy = http.delete(
+  `${apiPath.studyList}/:studyId`,
+  ({ params }) => {
+    const { studyId } = params;
+    console.log(`스터디 ${studyId} 삭제 요청`);
+
+    return HttpResponse.json({ success: true });
+  }
+);
+
+export const publishStudyAnnouncement = http.post(
+  `${mentorApiPath.studyAnnouncement}`,
+  async ({ request }) => {
+    const body = (await request.json()) as StudyAnnouncementType;
+    console.log("스터디 공지 게시 요청:", body);
+
+    return HttpResponse.json({ success: true });
+  }
+);
+
+export const modifyStudyAnnouncement = http.put(
+  `${mentorApiPath.studyAnnouncement}/:studyAnnouncementId`,
+  async ({ request, params }) => {
+    const { studyAnnouncementId } = params;
+    const body = (await request.json()) as StudyAnnouncementType;
+
+    console.log(`공지 ${studyAnnouncementId} 수정 요청:`, body);
+
+    return HttpResponse.json({ success: true });
+  }
+);
+
+export const deleteStudyAnnouncement = http.delete(
+  `${mentorApiPath.studyAnnouncement}/:studyAnnouncementId`,
+  ({ params }) => {
+    const { studyAnnouncementId } = params;
+    console.log(`공지 ${studyAnnouncementId} 삭제 요청`);
+
+    return HttpResponse.json({ success: true });
   }
 );
