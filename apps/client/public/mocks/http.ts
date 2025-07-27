@@ -11,7 +11,8 @@ app.use(
   cors({
     origin: [
       "http://localhost:3000",
-      "https://local-mentor.study.gdschongik.com",
+      "https://local-study.wawoo.dev",
+      "https://study.wawoo.dev",
     ],
     optionsSuccessStatus: 200,
     credentials: true,
