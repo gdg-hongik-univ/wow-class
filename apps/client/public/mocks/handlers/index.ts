@@ -1,3 +1,11 @@
-import * as authHandlers from "./auth";
+import { get } from "http";
 
-export const handlers = [...Object.values(authHandlers)];
+import * as authHandlers from "./auth";
+import * as myPageHandlers from "./my-page";
+import * as getMyOngoingStudyInfo from "./my-study";
+
+export const handlers = [
+  ...Object.values(authHandlers),
+  ...Object.values(myPageHandlers),
+  ...Object.values(getMyOngoingStudyInfo),
+];
