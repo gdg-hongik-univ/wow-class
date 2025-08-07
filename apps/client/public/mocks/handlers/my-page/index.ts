@@ -16,6 +16,7 @@ export const getMyAccountInfo = http.get<MyAccountInfoDto>(
 );
 
 export const getMyAppliedStudyList = http.get<
+  {},
   MyAppliedStudyListApiResponseDto[]
 >(apiPath.myAppliedStudy, () => {
   const mockResponse: MyAppliedStudyListApiResponseDto[] = [
@@ -50,41 +51,14 @@ export const getMyAppliedStudyList = http.get<
       },
       achievements: [
         {
-          achievementId: 1,
-          type: "EXCELLENT",
+          studyAchievementId: 1,
+          type: "FIRST_ROUND_OUTSTANDING_STUDENT",
           studentId: 10,
           studyId: 1,
-          title: "Outstanding Performance",
-          date: "2023-06-01",
-          icon: "star",
-          color: "gold",
-          descriptionLink: "https://example.com/achievement-details",
-          descriptionNotionLink: "https://example.com/achievement-notion",
-          description: "Achieved excellent performance in the study.",
         },
       ],
     },
-    {
-      studyHistory: {
-        studyId: 2,
-        status: "ONGOING",
-        totalRound: 8,
-        completedRound: 5,
-      },
-      study: {
-        studyId: 2,
-        title: "Another Study",
-        type: "MOBILE",
-        mentorName: "Mentor Two",
-        semester: {
-          academicYear: 2023,
-          semesterType: "SECOND",
-        },
-        description: "Another sample study description.",
-        descriptionNotionLink: "https://example.com/another-study-description",
-      },
-      achievements: [],
-    },
   ];
+
   return HttpResponse.json(mockResponse);
 });
