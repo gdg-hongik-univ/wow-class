@@ -3,6 +3,7 @@ import "wowds-ui/styles.css";
 import "@wow-class/ui/styles.css";
 import "react-toastify/dist/ReactToastify.css";
 
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { JotaiProvider } from "components/JotaiProvider";
 import Navbar from "components/Navbar";
 import { metaData } from "constants/metaData";
@@ -56,6 +57,7 @@ const RootLayout = ({
           {modal}
         </JotaiProvider>
       </body>
+      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MENTOR_ID || ""} />
     </html>
   );
 };
