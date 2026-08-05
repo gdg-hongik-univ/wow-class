@@ -57,7 +57,9 @@ const RootLayout = ({
           {modal}
         </JotaiProvider>
       </body>
-      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MENTOR_ID || ""} />
+      {process.env.NEXT_PUBLIC_GA_MENTOR_ID && (
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MENTOR_ID} />
+      )}
     </html>
   );
 };

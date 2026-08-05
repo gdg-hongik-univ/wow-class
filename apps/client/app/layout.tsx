@@ -64,7 +64,9 @@ const RootLayout = ({
         />
         <JotaiProvider>{children}</JotaiProvider>
       </body>
-      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_CLIENT_ID || ""} />
+      {process.env.NEXT_PUBLIC_GA_CLIENT_ID && (
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_CLIENT_ID} />
+      )}
     </html>
   );
 };
