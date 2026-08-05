@@ -10,6 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@next/third-parties": "^16.3.0",
     "@sentry/nextjs": "9.24.0",
     "@wojtekmaj/react-timerange-picker": "^6.0.0",
     "@wow-class/ui": "workspace:*",
