@@ -12,10 +12,11 @@ import type { ReactNode } from "react";
 import { ToastContainer } from "react-toastify";
 export const metadata: Metadata = {
   title: {
-    default: "와우클래스: 멘토 | GDGoC Hongik 스터디 서비스",
+    default: "와우클래스: 멘토 | GDG Hongik Univ. 스터디 서비스",
     template: "%s | 와우클래스 멘토",
   },
-  description: "와우클래스는 GDGoC Hongik이 제공하는 스터디 관리 플랫폼입니다.",
+  description:
+    "와우클래스는 GDG Hongik Univ.가 제공하는 스터디 관리 플랫폼입니다.",
   keywords: ["GDG", "Hongik", "스터디 서비스", "와우 클래스"],
   openGraph: metaData.openGraph,
   robots: {

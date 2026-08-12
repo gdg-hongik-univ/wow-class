@@ -13,14 +13,14 @@ const Header = () => {
     <header className={headerContainerStyle} role="banner">
       <Link className={logoContainerStyle} href="/landing">
         <Image
-          alt="gdgoc logo"
+          alt="gdg hongik univ. logo"
           className={imageStyle}
           height={24}
           src={logoImageUrl}
           width={49}
         />
         <div aria-level={1} className={titleStyle} role="heading">
-          GDGoC
+          GDG
         </div>
         <div aria-level={2} className={subTitleStyle} role="heading">
           Hongik Univ.

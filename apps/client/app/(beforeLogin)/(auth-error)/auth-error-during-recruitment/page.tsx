@@ -24,10 +24,10 @@ const AuthErrorDuringRecruitmentPage = () => {
         width={200}
       />
       <Text as="h1" className={headingStyle} typo="display2">
-        GDGoC Hongik 정회원만 이용 가능해요.
+        GDG Hongik Univ. 정회원만 이용 가능해요.
       </Text>
       <p className={descriptionStyle}>
-        이번 학기 GDGoC Hongik 정회원 모집 중이에요.
+        이번 학기 GDG Hongik Univ. 정회원 모집 중이에요.
         <br />
         아래 버튼을 눌러 가입할 수 있어요!
       </p>
@@ -41,13 +41,13 @@ const AuthErrorDuringRecruitmentPage = () => {
           홈으로 이동
         </Button>
         <Button
-          aria-label="GDGoC Hongik 가입하기"
+          aria-label="GDG Hongik Univ. 가입하기"
           asProp={Link}
           href={routePath.onboarding}
           style={buttonStyle}
           variant="outline"
         >
-          GDGoC Hongik 가입하기
+          GDG Hongik Univ. 가입하기
         </Button>
       </div>
     </main>
