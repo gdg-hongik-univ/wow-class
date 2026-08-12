@@ -21,11 +21,11 @@ const LandingPage = () => {
           />
           <h1 className={headlineStyle}>
             와우클래스와 함께 <br />
-            GDGoC에서 스터디해요!
+            GDG Hongik Univ.에서 스터디해요!
           </h1>
         </div>
         <Text as="p" className={descriptionStyle} color="sub" typo="body0">
-          GDGoC Hongik은 홍익대학교의 학생 개발자들을 위해 <br />
+          GDG Hongik Univ.은 홍익대학교의 학생 개발자들을 위해 <br />
           개발에 쉽게 입문할 수 있는 기회를 제공해요.
         </Text>
         <Button

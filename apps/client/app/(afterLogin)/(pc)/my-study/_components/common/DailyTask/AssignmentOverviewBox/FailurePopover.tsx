@@ -38,7 +38,7 @@ export const FailurePopover = async ({
           <br />
           제대로 제출한 후에도 계속 글자수가 부족하다고 나온다면,
           <br />
-          GDGoC Hongik 카카오톡 채널로 문의해주세요.
+          GDG Hongik Univ. 카카오톡 채널로 문의해주세요.
         </p>
       );
       break;
@@ -57,8 +57,8 @@ export const FailurePopover = async ({
           </ul>
           <br />
           <br />
-          제대로 제출한 후에도 계속 "위치 확인 불가"라고 나온다면, GDGoC Hongik
-          카카오톡 채널로 문의해주세요.
+          제대로 제출한 후에도 계속 "위치 확인 불가"라고 나온다면, GDG Hongik
+          Univ. 카카오톡 채널로 문의해주세요.
         </>
       );
       break;
@@ -71,7 +71,7 @@ export const FailurePopover = async ({
           <br />
           이름, 학번과 함께 어떤 상황인지
           <br />
-          GDGoC Hongik 카카오톡 채널로 전달해주세요.
+          GDG Hongik Univ. 카카오톡 채널로 전달해주세요.
         </p>
       );
       break;

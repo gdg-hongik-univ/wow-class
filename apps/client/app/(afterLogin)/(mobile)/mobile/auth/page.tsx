@@ -14,8 +14,8 @@ const MobileAuthPage = async () => {
         <Text typo="h1">로그인</Text>
         <Space height="lg" />
         <Text>
-          와우클래스는 GDGoC 정회원만 이용 가능해요. <br />
-          GDGoC 가입을 위해선 GitHub 계정이 필요해요.
+          와우클래스는 GDG Hongik Univ. 정회원만 이용 가능해요. <br />
+          GDG Hongik Univ. 가입을 위해선 GitHub 계정이 필요해요.
         </Text>
       </Flex>
       <Button
