@@ -11,7 +11,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:3000",
-      "https://local-mentor.study.gdschongik.com",
+      "https://local-mentor.study.gdghongik.com",
     ],
     optionsSuccessStatus: 200,
     credentials: true,
