@@ -1,6 +1,6 @@
 # wow-class
 
-GDGoC Hongik 스터디 서비스, 와우 클래스
+GDG Hongik Univ. 스터디 서비스, 와우 클래스
 
 ![image](https://github.com/user-attachments/assets/2557aa14-4593-4cb0-a323-57dd8f1a5cd5)
 
