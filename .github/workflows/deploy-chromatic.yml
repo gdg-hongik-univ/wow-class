@@ -38,11 +38,15 @@ jobs:
         run: pnpm install --no-frozen-lockfile
         working-directory: packages/ui
 
+      - name: Build Storybook
+        run: pnpm --filter @wow-class/ui run build-storybook -o packages/ui/storybook-static
+
       - name: Publish Chromatic
         id: chromatic
         uses: chromaui/action@v11
         with:
-          workingDir: packages/ui/src
+          workingDir: packages/ui
+          storybookBuildDir: storybook-static
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           token: ${{ secrets.TOKEN }}
 
