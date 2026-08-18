@@ -15,12 +15,8 @@ const config: StorybookConfig = {
   addons: [getAbsolutePath("@storybook/addon-essentials")],
 
   framework: {
-    name: getAbsolutePath("@storybook/nextjs"),
-    options: {
-      builder: {
-        fsCache: false,
-      },
-    },
+    name: getAbsolutePath("@storybook/react-webpack5"),
+    options: {},
   },
 
   async webpackFinal(config) {
