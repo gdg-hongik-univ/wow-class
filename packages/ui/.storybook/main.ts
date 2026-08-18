@@ -20,6 +20,8 @@ const config: StorybookConfig = {
   },
 
   async webpackFinal(config) {
+    config.cache = false;
+
     if (config?.resolve?.alias) {
       config.resolve.alias = {
         ...config.resolve.alias,
