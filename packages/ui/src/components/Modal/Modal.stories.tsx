@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { useOpenState } from "src/hooks";
 
+import { useOpenState } from "../../hooks";
 import Text from "../Text";
 import type { ModalProps } from ".";
 import Modal from ".";
