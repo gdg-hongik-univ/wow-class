@@ -20,7 +20,30 @@ const config: StorybookConfig = {
   },
 
   async webpackFinal(config) {
-    config.cache = false;
+    config.module = config.module || { rules: [] };
+    config.module.rules = config.module.rules || [];
+    config.module.rules.push({
+      test: /\.(ts|tsx)$/,
+      exclude: /node_modules/,
+      use: [
+        {
+          loader: require.resolve("swc-loader"),
+          options: {
+            jsc: {
+              parser: {
+                syntax: "typescript",
+                tsx: true,
+              },
+              transform: {
+                react: {
+                  runtime: "automatic",
+                },
+              },
+            },
+          },
+        },
+      ],
+    });
 
     if (config?.resolve?.alias) {
       config.resolve.alias = {
