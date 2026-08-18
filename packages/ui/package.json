@@ -21,6 +21,7 @@
     "@storybook/react": "^8.2.7",
     "@storybook/react-vite": "^8.2.7",
     "@storybook/react-webpack5": "^8.6.17",
+    "@swc/core": "^1.16.0",
     "@turbo/gen": "^1.12.4",
     "@types/eslint": "^8.56.5",
     "@types/node": "^20.11.24",
@@ -32,6 +33,7 @@
     "eslint": "^8.57.0",
     "eslint-plugin-storybook": "^0.8.0",
     "storybook": "^8.2.7",
+    "swc-loader": "^0.2.7",
     "typescript": "^5.3.3"
   },
   "dependencies": {
