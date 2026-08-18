@@ -48,6 +48,7 @@ const config: StorybookConfig = {
     if (config?.resolve?.alias) {
       config.resolve.alias = {
         ...config.resolve.alias,
+        "next/navigation": path.resolve(__dirname, "./mocks/nextNavigation.ts"),
         "@": path.resolve(__dirname, "../src"),
         src: path.resolve(__dirname, "../src"),
         "@styled-system": path.resolve(__dirname, "../styled-system"),
