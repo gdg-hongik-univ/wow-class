@@ -7,6 +7,6 @@
       "@styled-system/*": ["./styled-system/*"]
     }
   },
-  "include": ["src", "turbo/generators/config.ts"],
-  "exclude": ["node_modules", "dist"]
+  "include": ["src", "turbo/generators/config.ts", ".storybook/**/*"],
+  "exclude": ["node_modules", "dist", "storybook-static"]
 }

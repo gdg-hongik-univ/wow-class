@@ -120,6 +120,7 @@ module.exports = {
     "node_modules/",
     "dist/",
     "styled-system/",
+    "storybook-static/",
     "panda.config.ts",
     "postcss.config.cjs",
   ],
