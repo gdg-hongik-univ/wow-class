@@ -17,9 +17,7 @@
   "devDependencies": {
     "@storybook/addon-essentials": "^8.2.7",
     "@storybook/builder-webpack5": "8.6.17",
-    "@storybook/nextjs": "^8.2.8",
     "@storybook/react": "^8.2.7",
-    "@storybook/react-vite": "^8.2.7",
     "@storybook/react-webpack5": "^8.6.17",
     "@swc/core": "^1.16.0",
     "@turbo/gen": "^1.12.4",
