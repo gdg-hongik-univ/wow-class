@@ -16,7 +16,11 @@ const config: StorybookConfig = {
 
   framework: {
     name: getAbsolutePath("@storybook/nextjs"),
-    options: {},
+    options: {
+      builder: {
+        fsCache: false,
+      },
+    },
   },
 
   async webpackFinal(config) {
