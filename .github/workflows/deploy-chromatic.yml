@@ -46,7 +46,7 @@ jobs:
         id: chromatic
         uses: chromaui/action@v11
         with:
-          storybookBuildDir: packages/ui/storybook-static
+          storybookBuildDir: storybook-static
           workingDir: packages/ui
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           token: ${{ secrets.TOKEN }}
