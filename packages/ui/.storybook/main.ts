@@ -1,4 +1,4 @@
-import type { StorybookConfig } from "@storybook/react-webpack5";
+import type { StorybookConfig } from "@storybook/nextjs";
 
 import path, { join, dirname } from "path";
 
@@ -15,42 +15,15 @@ const config: StorybookConfig = {
   addons: [getAbsolutePath("@storybook/addon-essentials")],
 
   framework: {
-    name: getAbsolutePath("@storybook/react-webpack5"),
+    name: getAbsolutePath("@storybook/nextjs"),
     options: {},
   },
 
   async webpackFinal(config) {
-    config.module = config.module || { rules: [] };
-    config.module.rules = config.module.rules || [];
-    config.module.rules.push({
-      test: /\.(ts|tsx)$/,
-      exclude: /node_modules/,
-      use: [
-        {
-          loader: require.resolve("swc-loader"),
-          options: {
-            jsc: {
-              parser: {
-                syntax: "typescript",
-                tsx: true,
-              },
-              transform: {
-                react: {
-                  runtime: "automatic",
-                },
-              },
-            },
-          },
-        },
-      ],
-    });
-
     if (config?.resolve?.alias) {
       config.resolve.alias = {
         ...config.resolve.alias,
-        "next/navigation": path.resolve(__dirname, "./mocks/nextNavigation.ts"),
         "@": path.resolve(__dirname, "../src"),
-        src: path.resolve(__dirname, "../src"),
         "@styled-system": path.resolve(__dirname, "../styled-system"),
       };
     }

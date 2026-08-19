@@ -1,4 +1,2 @@
 # .eslintignore
 packages/panda-config/
-storybook-static/
-**/storybook-static/
