@@ -18,7 +18,7 @@
     "typescript": "^5.3.3"
   },
   "dependencies": {
-    "next": "^14.2.5",
+    "next": "^14.2.35",
     "react-toastify": "^10.0.5"
   }
 }

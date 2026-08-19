@@ -49,5 +49,8 @@
     "wowds-icons": "^0.1.4",
     "wowds-tokens": "^0.1.1",
     "wowds-ui": "^0.2.5"
+  },
+  "overrides": {
+    "webpack": "^5.91.0"
   }
 }
