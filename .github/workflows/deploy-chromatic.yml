@@ -17,7 +17,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Set up Node.js
+      - name: Set up Node.js 20
         uses: actions/setup-node@v4
         with:
           node-version: 20.x
@@ -39,10 +39,14 @@ jobs:
       - name: Install Dependencies
         run: pnpm install --no-frozen-lockfile
 
+      - name: Build Storybook
+        run: pnpm --filter=@wow-class/ui build-storybook
+
       - name: Publish Chromatic
         id: chromatic
         uses: chromaui/action@v11
         with:
+          storybookBuildDir: packages/ui/storybook-static
           workingDir: packages/ui
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           token: ${{ secrets.TOKEN }}
