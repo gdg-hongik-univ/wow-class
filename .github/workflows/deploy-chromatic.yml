@@ -10,15 +10,17 @@ on:
 jobs:
   chromatic-deployment:
     runs-on: ubuntu-latest
+    env:
+      ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: "true"
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Setup Node.js
+      - name: Set up Node.js 20
         uses: actions/setup-node@v4
         with:
-          node-version: 24.x
+          node-version: 20.x
 
       - name: Cache Dependencies
         uses: actions/cache@v3
@@ -38,7 +40,7 @@ jobs:
         run: pnpm install --no-frozen-lockfile
 
       - name: Build Storybook
-        run: pnpm --filter @wow-class/ui build-storybook
+        run: pnpm --filter=@wow-class/ui build-storybook
 
       - name: Publish Chromatic
         id: chromatic
