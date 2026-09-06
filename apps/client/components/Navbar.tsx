@@ -5,7 +5,6 @@ import { myStudyApi } from "apis/myStudyApi";
 import { routePath } from "constants/routePath";
 import Image from "next/image";
 import Link from "next/link";
-import Button from "wowds-ui/Button";
 
 import adminImageUrl from "../public/images/administrator.svg";
 import folderImageUrl from "../public/images/folder.svg";
@@ -56,10 +55,9 @@ const Navbar = async () => {
 
   return (
     <aside aria-label="client navigation bar" className={navbarContainerStyle}>
-      <Button
+      <Link
         aria-label="와우클래스 홈으로 이동"
-        asProp={Link}
-        className={logoButtonStyle}
+        className={logoContainerStyle}
         href={routePath["my-study"]}
       >
         <div className={logoTextStyle}>와우클래스</div>
@@ -70,7 +68,7 @@ const Navbar = async () => {
           src={logoImageUrl}
           width={42}
         />
-      </Button>
+      </Link>
       <nav
         aria-label="client nav menu"
         className={navContainerStyle}
@@ -135,15 +133,9 @@ const navContainerStyle = css({
   justifyContent: "space-between",
 });
 
-const logoButtonStyle = css({
+const logoContainerStyle = css({
   display: "flex",
   alignItems: "center",
-  gap: 8,
+  gap: "sm",
   padding: "6px 0px 7px 20px",
-  backgroundColor: "white",
-  color: "black",
-  width: "fit-content",
-  _hover: {
-    backgroundColor: "transparent",
-  },
 });
