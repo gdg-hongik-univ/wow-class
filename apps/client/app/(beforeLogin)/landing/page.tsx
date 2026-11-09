@@ -20,8 +20,9 @@ const LandingPage = () => {
             width={884}
           />
           <h1 className={headlineStyle}>
-            와우클래스와 함께 <br />
-            GDG Hongik Univ.에서 스터디해요!
+            GDG Hongik에서
+            <br />
+            와우클래스와 함께 스터디해요!
           </h1>
         </div>
         <Text as="p" className={descriptionStyle} color="sub" typo="body0">
